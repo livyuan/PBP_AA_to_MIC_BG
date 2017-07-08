@@ -1,11 +1,10 @@
-cwd="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/data/"
+cwd="../data/"
 setwd(cwd)
 
-libpath="/scicomp/home/yqh8/R/Rlib/"
 
-library("randomForest",lib.loc=libpath)
-library("mlbench", lib.loc=libpath)
-library("caret", lib.loc=libpath)
+library("randomForest")
+library("mlbench")
+library("caret")
 
 
 set.seed(1001)

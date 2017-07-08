@@ -54,13 +54,8 @@ do
 done
 
 #
-scr1="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/scripts/AAtoMICwrapper.sh"
+scr1="./AAtoMICwrapper.sh"
 bash $scr1 $x3
-
-#
-#x0="/scicomp/home/yqh8/TypeLineOutput/Thai251/Spn_Typing_Output/"
-#x2="/scicomp/home/yqh8/TypeLineOutput/Thai251/Spn_Typing_Output/TABLE_Spn_download_Typing_Results.txt"
-#x3="/scicomp/home/yqh8/TypeLineOutput/Thai251/Spn_Typing_Output/PBPtoMIC"
 
 cd $x3
 rm -f temp*
@@ -74,7 +69,7 @@ comm -23 <(sort -k1,1 SampleID1.txt) <(awk '{print $1}' temp3.txt | sort -k1,1) 
 cat temp4.txt >> temp3.txt
 
 awk 'NR>1' temp3.txt > temp3.1.txt; mv temp3.1.txt temp3.txt 
-f002="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/scripts/MIC_Ranges.txt"
+f002="./MIC_Ranges.txt"
 f003=$(cat $f002 | sed 's/ /,/g')
 
 n1=3

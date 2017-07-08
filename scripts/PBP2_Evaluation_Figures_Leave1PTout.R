@@ -5,14 +5,13 @@ library(scales)
 library(Rmisc)
 library("GGally")
 
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Data/")
 BLAclass=c("PEN", "AMO", "MER", "TAX", "CFT", "CFX")
 
 BKclass0=c(0.06, 	2, 0.25, 0.5, 1, 0.5)
 BKclass1=c(1, 	4, 0.5,  1,   2,   1)
 BKclass2=c(2, 	8, 1,    2,   4,   2)
 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Data/Leave1PTout-Eval-NON-MEN.csv"
+f1="../data/Leave1PTout-Eval-NON-MEN.csv"
 m4=read.csv(f1, colClasses="character")
   #output file from the "Eva-MIC-leave-onePT-out.R" script
 

@@ -1,11 +1,11 @@
 setwd("C:/Users/YQH8/Desktop/201607/PBP2/Data")
 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS3_Dataset1_PBP_AAtable.csv"
+f1="../data/TableS3_Dataset1_PBP_AAtable.csv"
 m1=read.csv(f1, colClasses="character")
 m1$DS=1
 
 
-f2="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS4_Dataset2_PBP_AAtable.csv"
+f2="../data/TableS4_Dataset2_PBP_AAtable.csv"
 m2=read.csv(f2, colClasses="character")
 m2$DS=2
 

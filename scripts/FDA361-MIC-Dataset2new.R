@@ -1,13 +1,11 @@
-setwd("C:/Users/YQH8/Desktop/201512/PBP")
-
 BLAclass=c("PEN", "AMO", "MER", "TAX", "CFT", "CFX")
 
 BKclass0=c(0.06, 	2, 0.25, 0.5, 1, 0.5)
 BKclass1=c(1, 	4, 0.5,  1,   2,   1)
 BKclass2=c(2, 	8, 1,    2,   4,   2)
 
-source("C:\\Users\\YQH8\\Desktop\\201508\\PBP_MIC_R\\scripts\\evaluation-FDA631.R") 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS2_Dataset2.csv"
+source("./evaluation-FDA631.R") 
+f1="../data/TableS2_Dataset2.csv"
 m2=read.csv(f1)
 m2=subset(m2, NewPT=="Y")
 
@@ -40,7 +38,7 @@ for (j1 in 1:length(BLAclass))
 
 x1=paste(rep(BLAclass, each=3), rep(c("MM", "RF", "EN"), 6), sep="_")
 rownames(m3)=x1
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Data/Eval_Dataset2new.csv"
+f1="../data/Eval_Dataset2new.csv"
 write.csv(m3, f1)
 
 #

@@ -1,10 +1,10 @@
 #!/bin/bash -l
 
-train_file="/scicomp/home/yqh8/PBP_MIC/db/PBP_2528_14-MIC-AAtable.csv"
-cwd="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/newDB/"
+train_file="../data/TableS3_Dataset1_PBP_AAtable.csv"
+cwd="../data"
 
-scr1="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/scripts/Build_RF_EN_Models.R"
+scr1="./Build_RF_EN_Models.R"
 Rscript $scr1 $train_file $cwd
 
-scr1="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/scripts/Build_MM_Model.R"
+scr1="../Build_MM_Model.R"
 Rscript $scr1 $train_file $cwd

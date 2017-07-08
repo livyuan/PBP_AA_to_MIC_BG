@@ -2,8 +2,6 @@
 Build_MM_Model<- function(train_file, cwd)
 {
 
-  #train_file="/scicomp/home/yqh8/PBP_MIC/db/PBP_2528_14-MIC-AAtable.csv"
-  #cwd="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/newDB/"
   setwd(cwd)
   
   m3=read.csv(train_file, colClasses="character")

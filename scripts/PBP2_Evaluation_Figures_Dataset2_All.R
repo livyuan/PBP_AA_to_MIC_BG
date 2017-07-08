@@ -5,13 +5,12 @@ library(scales)
 library(Rmisc)
 library("GGally")
 
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Data/")
 BLAclass=c("PEN", "AMO", "MER", "TAX", "CFT", "CFX")
 BKclass0=c(0.06, 	2, 0.25, 0.5, 1, 0.5)
 BKclass1=c(1, 	4, 0.5,  1,   2,   1)
 BKclass2=c(2, 	8, 1,    2,   4,   2)
 
-m4=read.csv("C:/Users/YQH8/Desktop/201607/PBP2/Data/Eval_Dataset2All.csv", colClasses="character")
+m4=read.csv("../data/Eval_Dataset2All.csv", colClasses="character")
   #output file from the "Eva-MIC-Dataset2All.R" script
 
 head(m4)

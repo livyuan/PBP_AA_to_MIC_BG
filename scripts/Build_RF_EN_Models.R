@@ -1,17 +1,14 @@
 
 Build_RF_EN_Models<- function(train_file, cwd)
 {
-  #train_file="/scicomp/home/yqh8/PBP_MIC/db/PBP_2528_14-MIC-AAtable.csv"
-  #cwd="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/newDB/"
   setwd(cwd)
 
-  libpath="/scicomp/home/yqh8/R/Rlib/"
   library("methods")
-  library("randomForest", lib.loc=libpath)
-  library("iterators", lib.loc=libpath)
-  library("foreach", lib.loc=libpath)
+  library("randomForest)
+  library("iterators")
+  library("foreach")
   library("Matrix")
-  library("glmnet", lib.loc=libpath)
+  library("glmnet")
   
   BLAclass=c("PEN", "AMO", "MER", "TAX", "CFT", "CFX")
   BKclass1=c(0.06,  2, 0.25, 0.5,  0.5, 0.5)

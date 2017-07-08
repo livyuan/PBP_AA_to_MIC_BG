@@ -1,9 +1,8 @@
 ## Fitting a Power-law growth Model by maximum-likelihood estimator
 ## Figure S1 and S2
 set.seed(1001)
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data")
-m1=read.csv("TableS1_Dataset1.csv", colClasses="character")
-m2=read.csv("TableS2_Dataset2.csv", colClasses="character")
+m1=read.csv("../data/TableS1_Dataset1.csv", colClasses="character")
+m2=read.csv("../data/TableS2_Dataset2.csv", colClasses="character")
 
 PTa=c(m1$PT, m2$PT)
 n1=length(PTa)
@@ -23,7 +22,7 @@ write.csv(m3, "PTgrowth.csv", row.names=F)
 
 
 #Figure S1
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data")
+
 m3=read.csv("PTgrowth.csv")
 
 nStrain=m3[, 1]
@@ -41,7 +40,6 @@ ggplot(m4, aes(x = log10(nStrain), y = log10(nPT))) +
 
 
 #Figure S2
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data")
 m3=read.csv("PTgrowth.csv")
 library("poweRlaw")
 nPT=as.numeric(m3[, 2])

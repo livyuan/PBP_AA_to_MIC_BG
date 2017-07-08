@@ -1,7 +1,5 @@
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/Data")
-
 set.seed(1001)
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS1_Dataset1.csv"
+f1="../data/TableS1_Dataset1.csv"
 m1=read.csv(f1, colClasses="character")
 head(m1)
 
@@ -24,11 +22,11 @@ ggplot(m4, aes(x = PEN_RAND, y = PEN)) +
                      " P =",signif(summary(fit)$coef[2,4], 5)))
 
 #
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS1_Dataset1.csv"
+f1="../data/TableS1_Dataset1.csv"
 m1=read.csv(f1, colClasses="character")
 head(m1)
 
-f2="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/Rand_test_PBPtype_MIC2_Prediction.csv"
+f2="../data/Rand_test_PBPtype_MIC2_Prediction.csv"
 m2=read.csv(f2, colClasses="character")
 head(m2)
 colnames(m2)
@@ -71,7 +69,7 @@ ggplot(m4, aes(x = PEN_RF_RAND, y = PEN)) +
 
 #
 set.seed(1001)
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS1_Dataset1.csv"
+f1="../data/TableS1_Dataset1.csv"
 m1=read.csv(f1, colClasses="character")
 head(m1)
 

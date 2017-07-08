@@ -1,5 +1,4 @@
 ## Function Build_PBP_AA_table
-#datafolder="C:\\Users\\YQH8\\Desktop\\201508\\PBP_MIC_R\\MA616"
 Build_PBP_AA_table<- function(datafolder)
 {
 
@@ -11,13 +10,8 @@ Build_PBP_AA_table<- function(datafolder)
 
   setwd(datafolder)
 
-  libpath="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/Rlib"
-  #x1=.libPaths()
-  x2=c(libpath, "/usr/lib64/R/library", "/usr/share/R/library")
-  .libPaths(x2)
-
   library("Biostrings")
-  cmd0="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/bin/"
+  cmd0="../bin/"
   cmd1="clustalo "
     # path to the "clustalo" software folder
 

@@ -1,12 +1,12 @@
 #!/bin/bash -l
 
 
-dir1="/scicomp/home/yqh8/PBP_MIC/leave1out_Rand_test/"
+dir1="../leave1out_Rand_test/"
 mkdir -p dir1
 cd dir1
 rf -f temp*
-file1="/scicomp/home/yqh8/PBP_MIC/db/PBP_2528_14-MIC-AAtable.csv"
-file2="/scicomp/home/yqh8/PBP_MIC/db/PBP_2528_14-MIC-AAtable_Rand_MIC.csv"
+file1="../data/TableS3_Dataset1_PBP_AAtable.csv"
+file2="../data/PBP_2528_14-MIC-AAtable_Rand_MIC.csv"
 
 RANDOM=1001
 
@@ -27,19 +27,19 @@ n1=$(awk -F"," 'NR>1' $file2 | awk -F"," '{print $2}' | sort | uniq | wc -l)  #3
 
 rm *
 
-subdir1="/scicomp/home/yqh8/PBP_MIC/qsubfiles/"
+subdir1="../qsubfiles/"
 mkdir -p $subdir1
-exefile1="/scicomp/home/yqh8/PBP_MIC/scripts/step1_Rand_test.sh"
+exefile1="./step1_Rand_test.sh"
 
 n1=307
 
 qsub -sync y -t 1-$n1:1 -e $subdir1 -o $subdir1 $exefile1 
 
-x1=$(cat "/scicomp/home/yqh8/PBP_MIC/leave1out_NewType/uniquePT.csv" | awk 'NR>1' \
-  |  sed 's/\"//g' | awk '{print "/scicomp/home/yqh8/PBP_MIC/leave1out_Rand_test/"$1"/Sample_PBPtype_MIC2_Prediction.csv"}')
+x1=$(cat "../leave1out_NewType/uniquePT.csv" | awk 'NR>1' \
+  |  sed 's/\"//g' | awk '{print "../leave1out_Rand_test/"$1"/Sample_PBPtype_MIC2_Prediction.csv"}')
 
 cat $x1 > temp1.txt 
-f2="/scicomp/groups/OID/NCIRD/DBD/RDB/Strep_Lab/External/share/PBP_AA_to_MIC/data/Rand_test_PBPtype_MIC2_Prediction.csv"
+f2="../data/Rand_test_PBPtype_MIC2_Prediction.csv"
 awk 'NR==1' temp1.txt > $f2
 grep -v "APT" temp1.txt >> $f2
 

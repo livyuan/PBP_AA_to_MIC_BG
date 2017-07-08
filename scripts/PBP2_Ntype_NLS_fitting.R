@@ -1,7 +1,6 @@
 ## Fitting a Model by least-squares estimates 
 set.seed(1001)
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/")
-m1=read.csv("C:/Users/YQH8/Desktop/201512/PBP_2528_15.csv", colClasses="character")
+m1=read.csv("../data/201512/TableS1_Dataset1.csv", colClasses="character")
 head(m1)
 n1=dim(m1)[1]
 x=1:n1
@@ -22,13 +21,12 @@ for (j2 in 1:n2)
   print(j2)
 }
 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Data/Permutate_Ab.csv"
+f1="../data/Permutate_Ab.csv"
 write.csv(m2, f1, row.names=F)
 
 #
 set.seed(1001)
-setwd("C:/Users/YQH8/Desktop/201607/PBP2/")
-m1=read.csv("C:/Users/YQH8/Desktop/201512/PBP_2528_15.csv", colClasses="character")
+m1=read.csv("../data/201512/TableS1_Dataset1.csv", colClasses="character")
 n1=dim(m1)[1]
 x1=sample(1:n1,n1)
 x2=m1$PT[x1]
@@ -40,8 +38,8 @@ for (j1 in x)
 }
 plot(x, y)
 
-m3a=read.csv("C:/Users/YQH8/Desktop/201607/PBP2/Data/DataSet2_1781.csv", colClasses="character")
-m3b=m3a[c("sampleID", "PT.y")]
+m3a=read.csv("../data/201512/TableS2_Dataset2.csv", colClasses="character")
+m3b=m3a[c("sampleID", "PT")]
 head(m3b)
 colnames(m3b)=c("LABID", "PT")
 m3=m3b
@@ -59,7 +57,7 @@ for (j1 in (length(x1)+1:length(x3)))
 x3=max(x)+(1:length(x3))
 plot(x3, y3)
 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Data/Permutate_Ab.csv"
+f1="../data/Permutate_Ab.csv"
 m2=read.csv(f1, colClasses="numeric")
 x2 <- 1:5000
 EP<-LCI <- UCI <- MED <- MEAN <- numeric(length(x2))
@@ -91,7 +89,7 @@ library(scales)
 install.packages("vioplot")
 library("vioplot")
  
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Data/Permutate_Ab.csv"
+f1="../data/Permutate_Ab.csv"
 m2=read.csv(f1, colClasses="numeric")
 A=m2[, 2]
 b=m2[, 3]

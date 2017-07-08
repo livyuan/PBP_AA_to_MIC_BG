@@ -6,8 +6,8 @@ BKclass0=c(0.06, 	2, 0.25, 0.5, 1, 0.5)
 BKclass1=c(1, 	4, 0.5,  1,   2,   1)
 BKclass2=c(2, 	8, 1,    2,   4,   2)
 
-source("C:\\Users\\YQH8\\Desktop\\201508\\PBP_MIC_R\\scripts\\evaluation-FDA631.R") 
-f1="C:/Users/YQH8/Desktop/201607/PBP2/Submission/BMCgenomics/R1/Data/TableS1_Dataset1.csv"
+source("./evaluation-FDA631.R") 
+f1="../data/TableS1_Dataset1.csv"
 m2=read.csv(f1)
 m2.3=m2
 colnames(m2.3)[1]="sampleID"
