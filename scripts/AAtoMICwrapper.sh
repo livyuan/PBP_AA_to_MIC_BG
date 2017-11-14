@@ -31,11 +31,11 @@ fi
 faaDir=$AAseqDir"/Sample_AAtoMIC/faa/"
 rm -rf   $faaDir
 mkdir -p $faaDir
-cd $faaDir
 
 scrdir="./"
-cp $scrdir"scripts/Ref_PBP_3.faa" .
-cp $AAseqDir"/"*".faa" .
+cp $scrdir"Ref_PBP_3.faa" $faaDir
+cp $AAseqDir"/"*".faa" $faaDir
+
 
 #module load clustal-omega/1.2
 scr1="./Build_PBP_AA_tableR3.2.2.R"
@@ -49,12 +49,10 @@ cp ./Sample_PBP_AA_table.csv $predir
 dbdir="../data"
 cp $dbdir"/"*  $predir
 
-cd $predir
-
 scr1="./AAtable_To_MIC_MM_RF_EN.R"
 Rscript $scr1 $predir
 
-cp Sample_PBPtype_MIC2_Prediction.csv  $AAseqDir
+cp "$predir"Sample_PBPtype_MIC2_Prediction.csv  $AAseqDir
 
 
 echo "MIC pridiction results are in file:"
