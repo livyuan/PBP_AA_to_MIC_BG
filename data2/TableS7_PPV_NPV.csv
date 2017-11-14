@@ -1,0 +1,13 @@
+Method,Antibiotic,Number of isolates predicted to be resistant ,Proportion of predicted resistant isolates that are phenotypically resistant (PPV),Number of isolates predicted to be non-resistant ,Proportion of predicted non-resistant isolates that are phenotypically non-resistant (NPV)
+MM,PEN,153,0.82,1627,1
+RF,PEN,152,0.83,1628,1
+MM,AMO,41,0.9,1739,1
+RF,AMO,42,0.93,1738,1
+MM,MER,52,0.88,1717,0.99
+RF,MER,44,0.93,1736,0.98
+MM,TAX,37,0.7,1733,1
+RF,TAX,35,0.74,1745,1
+MM,CFT,5,0.8,1730,1
+RF,CFT,5,0.8,1775,1
+MM,CFX,186,0.95,1594,1
+RF,CFX,185,0.96,1595,1

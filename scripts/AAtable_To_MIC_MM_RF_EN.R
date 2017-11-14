@@ -129,22 +129,6 @@ PBP_AA_TO_MIC2<- function(cwd){
   m7=merge(m6, m3, by="sampleID", all.x=T)
   m6=m7
   
-  #Model fitting Random Forest BK1
-
-  RFdbBK1=c("PEN_RandomForestBK1", "AMO_RandomForestBK1", "MER_RandomForestBK1",
-	  "TAX_RandomForestBK1", "CFT_RandomForestBK1", "CFX_RandomForestBK1")  
-  m3=m2$sampleID
-  for (j1 in 1:6)
-  {
-    rm(fit1)
-    load(RFdbBK1[j1])
-    m3=cbind(m3, round(predict(fit1, newdata = m2.2, type="prob"), 3)[, 2])
-  }
-
-  colnames(m3)[1]="sampleID"
-  colnames(m3)[2:7]=paste(BLAclass, "_BK1_RF", sep="")
-  m7=merge(m6, m3, by="sampleID", all.x=T)
-  m6=m7  
 
   #Model fitting Elastic Net MIC
 
@@ -167,26 +151,6 @@ PBP_AA_TO_MIC2<- function(cwd){
   m7=merge(m6, m3, by="sampleID", all.x=T)
   m6=m7
 
-  #Model fitting Elastic Net BK1
-  
-  ENdbBK1=c("PEN_ElasticNetBK1", "AMO_ElasticNetBK1", "MER_ElasticNetBK1",
-	  "TAX_ElasticNetBK1", "CFT_ElasticNetBK1", "CFX_ElasticNetBK1")  
-
-  xfactors <- model.matrix(~ ., data=m2.2)[, -1]
-  x1 <- as.matrix(data.frame(xfactors)) 
-  if (dim(x1)[2]==1) {x1=t(x1)}  
-  m3=m2$sampleID
-  for (j1 in 1:6)
-  {
-    rm(fit1)
-    load(ENdbBK1[j1])
-    m3=cbind(m3, round(predict(fit1, x1, type="response"), 3))
-  }
-
-  colnames(m3)[1]="sampleID"
-  colnames(m3)[2:7]=paste(BLAclass, "_BK1_EN", sep="")
-  m7=merge(m6, m3, by="sampleID", all.x=T)
-  m6=m7
   write.csv(m6, file="Sample_PBPtype_MIC2_Prediction.csv", row.names=F) 
 }
 
